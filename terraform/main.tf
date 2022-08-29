@@ -14,18 +14,16 @@ required_providers {
 }
 }
 
-
 provider "azurerm" {
   features {}
 }
 
 data "azurerm_resource_group" "resource_group" {
   name     = "CVWebsite"
-  location = "West Europe"
 }
 
 resource "azurerm_storage_account" "storage_account" {
-  name                     = "prodstaCVAzureFunc"
+  name                     = "prodstacvazurefunc"
   resource_group_name      = "${data.azurerm_resource_group.resource_group.name}"
   location                 = "${data.azurerm_resource_group.resource_group.location}"
   account_tier             = "Standard"
