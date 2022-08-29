@@ -17,7 +17,7 @@ env:
   ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}     
   tf_actions_working_dir: ./terraform 
   ARM_SKIP_PROVIDER_REGISTRATION: true # skip provider registration for terraform because the service principal was only granted rights at the resource group level, see https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#skip_provider_registration
-
+  TF_LOG: trace
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
