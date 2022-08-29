@@ -33,10 +33,6 @@ jobs:
     #     tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
     #     subscription-id: ${{ secrets.AZURE_SUBSCRIBTION_ID }}
 
-    - run: echo "$ARM_TENANT_ID"
-      working-directory: ${{ env.tf_actions_working_dir }}
-      continue-on-error: true
-
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -check
